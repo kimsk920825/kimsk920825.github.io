@@ -1,4 +1,175 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[0x530x650x610x6E | Feed]]></title><description><![CDATA[Committing with respect to Matrix, Calculus, Derivative, crawling and such related to data_analysis]]></description><link>https://kimsk920825.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 23 Mar 2021 09:11:43 GMT</lastBuildDate><item><title><![CDATA[R로 서울시 생활인구 변화 분석 (탐색적 분석)]]></title><description><![CDATA[서울시 생활인구 변화 분석 데이터 출처 : "행정동별 서울생활인구(내국인)" -> 집계 및 변환
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[0x530x650x610x6E | Feed]]></title><description><![CDATA[Committing with respect to Matrix, Calculus, Derivative, crawling and such related to data_analysis]]></description><link>https://kimsk920825.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 07 Apr 2021 05:09:02 GMT</lastBuildDate><item><title><![CDATA[난이도 중 SQL 해커랭크 문제풀이 (총9문제)]]></title><description><![CDATA[Contest Leaderboard You did such a great job helping Julia with her last coding contest challenge that she wants you to work on this one, t…]]></description><link>https://kimsk920825.github.io/Hacker_Rank_SQL/</link><guid isPermaLink="false">https://kimsk920825.github.io/Hacker_Rank_SQL/</guid><pubDate>Wed, 07 Apr 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;contest-leaderboard&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#contest-leaderboard&quot; aria-label=&quot;contest leaderboard permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Contest Leaderboard&lt;/h1&gt;
+&lt;p&gt;You did such a great job helping Julia with her last coding contest challenge that she wants you to work on this one, too!&lt;/p&gt;
+&lt;p&gt;The total score of a hacker is the sum of their maximum scores for all of the challenges.
+Write a query to print the hacker&lt;em&gt;id, name, and total score of the hackers ordered by the descending score.
+If more than one hacker achieved the same total score, then sort the result by ascending hacker&lt;/em&gt;id. Exclude all hackers with 0 a total score of from your result.&lt;/p&gt;
+&lt;p&gt;번역
+너가 지난번에 줄리아 코딩대회를 잘 도와줘서 줄리아가 이번에도 너의 도움을 원해.
+해커 한명의 총 점수는 그 한명이 도전한 문제의 점수 중 가장 높게 나온 점수들의 합으로 정의한다.
+해커 아이디, 이름, 그리고 해커의 총 점수를 출력해라.
+점수를 내림차순으로 정렬해라.
+만약 한 명이상의 선수가 같은 점수를 받았다면 hacker_id열 기준 오름차순으로 정렬해라.
+총 점수가 0점인 사람은 출력에서 배제하라. &lt;/p&gt;
+&lt;h3 id=&quot;input-format&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#input-format&quot; aria-label=&quot;input format permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Input Format&lt;/h3&gt;
+&lt;p&gt;The following tables contain contest data: &lt;br&gt;
+Hackers: The hacker_id is the id of the hacker, and name is the name of the hacker. &lt;br&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&quot;center&quot;&gt;Column&lt;/th&gt;
+&lt;th align=&quot;center&quot;&gt;Type&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;hacker_id&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;Integer&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;name&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;String&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Submissions: The submission&lt;em&gt;id is the id of the submission, hacker&lt;/em&gt;id is the id of the hacker who made
+the submission, challenge_id is the id of the challenge for which the submission belongs to, and score is
+the score of the submission.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&quot;center&quot;&gt;Column&lt;/th&gt;
+&lt;th align=&quot;center&quot;&gt;Type&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;submission_id&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;Integer&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;hacker_id&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;Integer&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;challenge_id&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;Integer&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;score&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;Integer&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&quot;sample-input&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#sample-input&quot; aria-label=&quot;sample input permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Sample Input&lt;/h3&gt;
+&lt;p&gt;Hackers Table:
+|hacker_id|name|
+|:---:|:---:|
+| 4071  | name  |
+| 4806  | Angela  |
+| 26071  | Frank  |
+| 49438  | Patrick  |
+| 74842  | Lisa  |
+| 80305  | Kimberly  |
+| 84072  | Bonnie  |
+| 87868  | Michael  |
+| 92118  | Todd  |
+| 95895  | Joe  |&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;Submissions Table:
+|submission&lt;em&gt;id   |hacker&lt;/em&gt;id   |challenge_id   |score   |
+|:-:|:-:|:-:|:-:|
+|67194   |&lt;span style=&quot;color:blue&quot;&gt;74842&lt;/span&gt;   |&lt;span style=&quot;color:blue&quot;&gt;63132&lt;/span&gt;   |&lt;span style=&quot;color:blue&quot;&gt;76&lt;/span&gt;   |
+|64479   |&lt;span style=&quot;color:blue&quot;&gt;74842&lt;/span&gt;   |&lt;span style=&quot;color:blue&quot;&gt;19797&lt;/span&gt;   |&lt;span style=&quot;color:blue&quot;&gt;98&lt;/span&gt;   |
+|40742   |26071   |49593   |20   |
+|17513   |4806   |49593   |32   |
+|69846   |80305   |19797   |19   |
+|41002   |26071   |89343   |36   |
+|52826   |49438   |49593   |9   |
+|31093   |26071   |19797   |2   |
+|81614   |84072   |49593   |100   |
+|44829   |26071   |89343   |17   |
+|75147   |80305   |49593   |48   |
+|14115   |4806   |49593   |76   |
+|6943   |&lt;span style=&quot;color:red&quot;&gt;4071&lt;/span&gt;   |&lt;span style=&quot;color:red&quot;&gt;19797&lt;/span&gt;   |&lt;span style=&quot;color:red&quot;&gt;95&lt;/span&gt;   |
+|12855   |4806   |25917   |13   |
+|73343   |80305   |49593   |42   |
+|84264   |84072   |63132   |0   |
+|9951   |&lt;span style=&quot;color:red&quot;&gt;4071&lt;/span&gt;   |&lt;span style=&quot;color:red&quot;&gt;49593&lt;/span&gt;   |&lt;span style=&quot;color:red&quot;&gt;43&lt;/span&gt;   |
+|45104   |49438   |25917   |34   |
+|53795   |&lt;span style=&quot;color:blue&quot;&gt;74842&lt;/span&gt;   |&lt;span style=&quot;color:blue&quot;&gt;19797&lt;/span&gt;   |&lt;span style=&quot;color:blue&quot;&gt;5&lt;/span&gt;   |
+|26363   |26071   |19797   |5   |
+|10063   |&lt;span style=&quot;color:red&quot;&gt;4071&lt;/span&gt;   |&lt;span style=&quot;color:red&quot;&gt;49593&lt;/span&gt;   |&lt;span style=&quot;color:red&quot;&gt;96&lt;/span&gt;   |&lt;/p&gt;
+&lt;br&gt;
+Explanation
+Hacker 4071 submitted solutions for challenges 19797 and 49593, so the total score = 95 + max(43,96) = 101
+&lt;br&gt;
+Hacker 74842 submitted solutions for challenges 19797 and 63132, so the total score = max(98,5) + 76 = 174
+&lt;br&gt;
+&lt;br&gt;
+분석
+&lt;br&gt;
+해커랭크 mysql서버는 window function이 안된다. &lt;br&gt;
+처음에는 코드가 잘못된줄 알고 계속 들여다 봤지만 안되서 ms sql server로 바꿔서 진행했다. 
+해커랭크 mysql서버가 예전버전이어서 window function이 안되는것같아 방법을 2개로 나눠서 진행했다. 첫 번째 방법은 회사 mysql 서버에서 window function이 돌아갈때를 가정하고 풀었고 두 번째 방법은 회사 mysql 서버가 예전 버전이라고 가정하고 window function 없이 풀었다. &lt;br&gt;
+&lt;p&gt;방법 1: &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;첫 번째 테이블 만들기&lt;/li&gt;
+&lt;li&gt;첫 번째 select 절 만들기&lt;/li&gt;
+&lt;li&gt;두 번째 테이블절 지정.&lt;/li&gt;
+&lt;li&gt;두 번째 select절 조건 작성&lt;/li&gt;
+&lt;li&gt;두 번째 select절 출력&lt;/li&gt;
+&lt;li&gt;세 번째 테이블 지정&lt;/li&gt;
+&lt;li&gt;세 번째 select절 조건 만들기&lt;br&gt;
+7-1. hacker&lt;em&gt;id당, name당 score 점수 합산 &lt;br&gt;
+7-2. 점수 합산이 0인것은 제외 &lt;br&gt;
+7-3. 가장 높은 점수 부터 내림차순으로 정렬 출력, 같은 점수가 있다면 hacker&lt;/em&gt;id 올림차순으로 정렬 출력.&lt;/li&gt;
+&lt;li&gt;세 번째 select절 출력&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sql&quot;&gt;&lt;pre class=&quot;language-sql&quot;&gt;&lt;code class=&quot;language-sql&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;/*
+8. 세 번째 select절 출력
+*/&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; hacker_id&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; name&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;score&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; 
+&lt;span class=&quot;token comment&quot;&gt;/*
+6. 세 번째 테이블 지정
+*/&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;/*
+    5. 두 번째 select절 출력
+    */&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; t&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;hacker_id&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 
+           t&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;name&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 
+           t&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;challenge_id&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 
+           t&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;score&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 
+           t&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;rnk
+    &lt;span class=&quot;token comment&quot;&gt;/*
+    3. 두 번째 테이블절 지정. 
+    */&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+        &lt;span class=&quot;token comment&quot;&gt;/*
+        2. 첫 번째 select 절 만들기
+        해커 아이디, 해커 이름, 해커가 도전했을 떄 부여받은 아이디, 점수, 그리고 서브미션 해커아이디와 서브미션 도전 아이디 기준으로 파티션을 나누고 서브미션 점수 열 기준으로 내림차순하는 하는 열을 rnk라고 이름을 만들고 출력한다. 
+        */&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; hackers&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;hacker_id &lt;span class=&quot;token keyword&quot;&gt;as&lt;/span&gt; hacker_id&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 
+               hackers&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;name &lt;span class=&quot;token keyword&quot;&gt;as&lt;/span&gt; name &lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 
+               submissions&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;challenge_id &lt;span class=&quot;token keyword&quot;&gt;as&lt;/span&gt; challenge_id&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+               submissions&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;score &lt;span class=&quot;token keyword&quot;&gt;as&lt;/span&gt; score&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+               row_number&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;over&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;partition&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;by&lt;/span&gt; submissions&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;hacker_id&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; submissions&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;challenge_id &lt;span class=&quot;token keyword&quot;&gt;order&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;by&lt;/span&gt; submissions&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;score &lt;span class=&quot;token keyword&quot;&gt;desc&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;as&lt;/span&gt; rnk
+         &lt;span class=&quot;token comment&quot;&gt;/*
+         1. 첫 번째 테이블 만들기
+         해커 태이블과 서브미션 테이블을 해커테이블의 해커아이디와 서브미션 테이블의 해커아이디 기준으로 inner join을 해준다.
+         */&lt;/span&gt;        
+        &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; hackers &lt;span class=&quot;token keyword&quot;&gt;inner&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;join&lt;/span&gt; submissions &lt;span class=&quot;token keyword&quot;&gt;on&lt;/span&gt; hackers&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;hacker_id &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; submissions&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;hacker_id&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; t
+    &lt;span class=&quot;token comment&quot;&gt;/*
+    4. 두 번째 select절 조건 작성
+    rnk가 1인 행만 출력. rnk가 1이라는 뜻은 같은 문제를 풀었을 때 가장 높은 점수를 받은 값을 의미함.
+    */&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; rnk &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; t2
+&lt;span class=&quot;token comment&quot;&gt;/*7. 세 번째 select절 조건 만들기*/&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;group&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;by&lt;/span&gt; hacker_id&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; name
+&lt;span class=&quot;token keyword&quot;&gt;having&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;score&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;token operator&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;order&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;by&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;score&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;token keyword&quot;&gt;desc&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; hacker_id&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[R로 서울시 생활인구 변화 분석 (탐색적 분석)]]></title><description><![CDATA[서울시 생활인구 변화 분석 데이터 출처 : "행정동별 서울생활인구(내국인)" -> 집계 및 변환
 서울열린데이터광장(http://data.seoul.go.kr/dataList/OA-14991/S/1/datasetView.do) 데이터 설명 : 2019…]]></description><link>https://kimsk920825.github.io/R_change_of_population/</link><guid isPermaLink="false">https://kimsk920825.github.io/R_change_of_population/</guid><pubDate>Thu, 11 Mar 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;서울시 생활인구 변화 분석&lt;/p&gt;
 &lt;p&gt;데이터 출처 : &quot;행정동별 서울생활인구(내국인)&quot; -&gt; 집계 및 변환
 서울열린데이터광장(&lt;a href=&quot;http://data.seoul.go.kr/dataList/OA-14991/S/1/datasetView.do&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;http://data.seoul.go.kr/dataList/OA-14991/S/1/datasetView.do&lt;/a&gt;)&lt;/p&gt;
