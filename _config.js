@@ -1,7 +1,7 @@
 module.exports = {
   /** Site MetaData (Required all)*/
   title: `0x530x650x610x6E`,                           // (* Required)
-  description: `Committing with respect to Matrix, Calculus, Derivative, crawling and such related to data_analysis`,          // (* Required)
+  description: `데이터 분석가의 직무: Query를 통해 데이터를 추출하고, 다른 부서에서 의사결정을 쉽게 할 수 있게 데이터를 시각화 하며 사업분야의 높은 이해도와 함께 데이터로부터 인사이트를 추출해라`,          // (* Required)
   author: `Sean Seung Kyu Kim`,                         // (* Required)
   language: 'ko-KR',                        // (* Required) html lang, ex. 'en' | 'en-US' | 'ko' | 'ko-KR' | ...
   siteUrl: 'https://kimsk920825.github.io/',                      // (* Required)
@@ -28,10 +28,10 @@ module.exports = {
   /** Post */
   enablePostOfContents: true,     // TableOfContents activation (Type of Value: Boolean. Not String)
   disqusShortname: '',            // comments (Disqus sort-name)
-  enableSocialShare: true,        // Social share icon activation (Type of Value: Boolean. Not String)
+  enableSocialShare: false,        // Social share icon activation (Type of Value: Boolean. Not String)
 
   /** Optional */
-  googleAnalytics: '',     // Google Analytics TrackingID. ex.'UA-123456789-0'
+  googleAnalytics: 'G-K80JJJRRSH',     // Google Analytics TrackingID. ex.'UA-123456789-0'
   googleSearchConsole: '', // content value in HTML tag of google search console ownership verification. ex.'w-K42k14_I4ApiQKuVPbCRVV-GxlrqWxYoqO94KMbKo'
   googleAdsenseSlot: '',   // Google Adsense Slot. ex.'5214956675'
   googleAdsenseClient: '', // Google Adsense Client. ex.'ca-pub-5001380215831339'

@@ -5,7 +5,7 @@ tags:
   - Matplotlib
   - gredient vector
   - 기울기 벡터 
-  - 퀴버플록
+  - 퀴버플로
 ---
 ### Steps to get a gradient vector.      
 - given equation: f(x,y) = $2x^2 + 6xy + 7y^2 -26x -54y + 107$
