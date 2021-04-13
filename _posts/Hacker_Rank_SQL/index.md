@@ -47,6 +47,7 @@ the score of the submission.
 
 ### Sample Input
 Hackers Table:
+
 |hacker_id|name|
 |:---:|:---:|
 | 4071  | name  |
@@ -63,6 +64,7 @@ Hackers Table:
 <br>
 
 Submissions Table: <br>
+
 |submission_id|hacker_id|challenge_id|score|
 |:---:|:---:|:---:|:---:|
 |67194|<span style="color:blue">74842</span>|<span style="color:blue">63132</span>|<span style="color:blue">76</span>|

@@ -14,7 +14,7 @@ module.exports = {
     // If the file does not exist, it is replaced by a random image.
 
   /** Home > Bio information*/
-  comment: 'Committing with respect to Matrix, Cal, Derivative, crawling and such related to data_analysis',
+  comment: '데이터 분석가의 직무: Query를 통해 데이터를 추출하고, 다른 부서에서 의사결정을 쉽게 할 수 있게 데이터를 시각화 하며 사업분야의 높은 이해도와 함께 데이터로부터 인사이트를 추출해라',
   name: 'Sean Seung Kyu Kim',
   company: 'past: the founder of BestiEdu',
   location: 'Korea',
