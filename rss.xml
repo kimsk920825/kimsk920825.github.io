@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[0x530x650x610x6E | Feed]]></title><description><![CDATA[데이터 분석가의 직무: Query를 통해 데이터를 추출하고, 다른 부서에서 의사결정을 쉽게 할 수 있게 데이터를 시각화 하며 사업분야의 높은 이해도와 함께 데이터로부터 인사이트를 추출해라]]></description><link>https://kimsk920825.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 09 Apr 2021 10:14:21 GMT</lastBuildDate><item><title><![CDATA[난이도 중 SQL 해커랭크 문제풀이 (총9문제)]]></title><description><![CDATA[Contest Leaderboard You did such a great job helping Julia with her last coding contest challenge that she wants you to work on this one, t…]]></description><link>https://kimsk920825.github.io/Hacker_Rank_SQL/</link><guid isPermaLink="false">https://kimsk920825.github.io/Hacker_Rank_SQL/</guid><pubDate>Wed, 07 Apr 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;contest-leaderboard&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#contest-leaderboard&quot; aria-label=&quot;contest leaderboard permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Contest Leaderboard&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[0x530x650x610x6E | Feed]]></title><description><![CDATA[데이터 분석가의 직무: Query를 통해 데이터를 추출하고, 다른 부서에서 의사결정을 쉽게 할 수 있게 데이터를 시각화 하며 사업분야의 높은 이해도와 함께 데이터로부터 인사이트를 추출해라]]></description><link>https://kimsk920825.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 13 Apr 2021 08:22:55 GMT</lastBuildDate><item><title><![CDATA[난이도 중 SQL 해커랭크 문제풀이 (총9문제)]]></title><description><![CDATA[Contest Leaderboard You did such a great job helping Julia with her last coding contest challenge that she wants you to work on this one, t…]]></description><link>https://kimsk920825.github.io/Hacker_Rank_SQL/</link><guid isPermaLink="false">https://kimsk920825.github.io/Hacker_Rank_SQL/</guid><pubDate>Wed, 07 Apr 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;contest-leaderboard&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#contest-leaderboard&quot; aria-label=&quot;contest leaderboard permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Contest Leaderboard&lt;/h1&gt;
 &lt;p&gt;You did such a great job helping Julia with her last coding contest challenge that she wants you to work on this one, too!&lt;/p&gt;
 &lt;p&gt;The total score of a hacker is the sum of their maximum scores for all of the challenges.
 Write a query to print the hacker&lt;em&gt;id, name, and total score of the hackers ordered by the descending score.
@@ -61,44 +61,197 @@ the score of the submission.&lt;/p&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h3 id=&quot;sample-input&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#sample-input&quot; aria-label=&quot;sample input permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Sample Input&lt;/h3&gt;
-&lt;p&gt;Hackers Table:
-|hacker_id|name|
-|:---:|:---:|
-| 4071  | name  |
-| 4806  | Angela  |
-| 26071  | Frank  |
-| 49438  | Patrick  |
-| 74842  | Lisa  |
-| 80305  | Kimberly  |
-| 84072  | Bonnie  |
-| 87868  | Michael  |
-| 92118  | Todd  |
-| 95895  | Joe  |&lt;/p&gt;
+&lt;p&gt;Hackers Table:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&quot;center&quot;&gt;hacker_id&lt;/th&gt;
+&lt;th align=&quot;center&quot;&gt;name&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;4071&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;name&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;4806&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;Angela&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;26071&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;Frank&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;49438&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;Patrick&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;74842&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;Lisa&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;80305&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;Kimberly&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;84072&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;Bonnie&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;87868&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;Michael&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;92118&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;Todd&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;95895&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;Joe&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 &lt;br&gt;
-&lt;p&gt;Submissions Table: &lt;br&gt;
-|submission&lt;em&gt;id|hacker&lt;/em&gt;id|challenge_id|score|
-|:---:|:---:|:---:|:---:|
-|67194|&lt;span style=&quot;color:blue&quot;&gt;74842&lt;/span&gt;|&lt;span style=&quot;color:blue&quot;&gt;63132&lt;/span&gt;|&lt;span style=&quot;color:blue&quot;&gt;76&lt;/span&gt;|
-|64479   |&lt;span style=&quot;color:blue&quot;&gt;74842&lt;/span&gt;   |&lt;span style=&quot;color:blue&quot;&gt;19797&lt;/span&gt;   |&lt;span style=&quot;color:blue&quot;&gt;98&lt;/span&gt;   |
-|40742   |26071   |49593   |20   |
-|17513   |4806   |49593   |32   |
-|69846   |80305   |19797   |19   |
-|41002   |26071   |89343   |36   |
-|52826   |49438   |49593   |9   |
-|31093   |26071   |19797   |2   |
-|81614   |84072   |49593   |100   |
-|44829   |26071   |89343   |17   |
-|75147   |80305   |49593   |48   |
-|14115   |4806   |49593   |76   |
-|6943   |&lt;span style=&quot;color:red&quot;&gt;4071&lt;/span&gt;   |&lt;span style=&quot;color:red&quot;&gt;19797&lt;/span&gt;   |&lt;span style=&quot;color:red&quot;&gt;95&lt;/span&gt;   |
-|12855   |4806   |25917   |13   |
-|73343   |80305   |49593   |42   |
-|84264   |84072   |63132   |0   |
-|9951   |&lt;span style=&quot;color:red&quot;&gt;4071&lt;/span&gt;   |&lt;span style=&quot;color:red&quot;&gt;49593&lt;/span&gt;   |&lt;span style=&quot;color:red&quot;&gt;43&lt;/span&gt;   |
-|45104   |49438   |25917   |34   |
-|53795   |&lt;span style=&quot;color:blue&quot;&gt;74842&lt;/span&gt;   |&lt;span style=&quot;color:blue&quot;&gt;19797&lt;/span&gt;   |&lt;span style=&quot;color:blue&quot;&gt;5&lt;/span&gt;   |
-|26363   |26071   |19797   |5   |
-|10063   |&lt;span style=&quot;color:red&quot;&gt;4071&lt;/span&gt;   |&lt;span style=&quot;color:red&quot;&gt;49593&lt;/span&gt;   |&lt;span style=&quot;color:red&quot;&gt;96&lt;/span&gt;   |&lt;/p&gt;
+&lt;p&gt;Submissions Table: &lt;br&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&quot;center&quot;&gt;submission_id&lt;/th&gt;
+&lt;th align=&quot;center&quot;&gt;hacker_id&lt;/th&gt;
+&lt;th align=&quot;center&quot;&gt;challenge_id&lt;/th&gt;
+&lt;th align=&quot;center&quot;&gt;score&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;67194&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;&lt;span style=&quot;color:blue&quot;&gt;74842&lt;/span&gt;&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;&lt;span style=&quot;color:blue&quot;&gt;63132&lt;/span&gt;&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;&lt;span style=&quot;color:blue&quot;&gt;76&lt;/span&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;64479&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;&lt;span style=&quot;color:blue&quot;&gt;74842&lt;/span&gt;&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;&lt;span style=&quot;color:blue&quot;&gt;19797&lt;/span&gt;&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;&lt;span style=&quot;color:blue&quot;&gt;98&lt;/span&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;40742&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;26071&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;49593&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;20&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;17513&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;4806&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;49593&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;32&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;69846&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;80305&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;19797&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;19&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;41002&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;26071&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;89343&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;36&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;52826&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;49438&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;49593&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;9&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;31093&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;26071&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;19797&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;81614&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;84072&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;49593&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;100&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;44829&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;26071&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;89343&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;17&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;75147&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;80305&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;49593&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;48&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;14115&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;4806&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;49593&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;76&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;6943&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;&lt;span style=&quot;color:red&quot;&gt;4071&lt;/span&gt;&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;&lt;span style=&quot;color:red&quot;&gt;19797&lt;/span&gt;&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;&lt;span style=&quot;color:red&quot;&gt;95&lt;/span&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;12855&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;4806&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;25917&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;13&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;73343&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;80305&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;49593&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;42&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;84264&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;84072&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;63132&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;9951&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;&lt;span style=&quot;color:red&quot;&gt;4071&lt;/span&gt;&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;&lt;span style=&quot;color:red&quot;&gt;49593&lt;/span&gt;&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;&lt;span style=&quot;color:red&quot;&gt;43&lt;/span&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;45104&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;49438&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;25917&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;34&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;53795&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;&lt;span style=&quot;color:blue&quot;&gt;74842&lt;/span&gt;&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;&lt;span style=&quot;color:blue&quot;&gt;19797&lt;/span&gt;&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;&lt;span style=&quot;color:blue&quot;&gt;5&lt;/span&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;26363&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;26071&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;19797&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;5&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;10063&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;&lt;span style=&quot;color:red&quot;&gt;4071&lt;/span&gt;&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;&lt;span style=&quot;color:red&quot;&gt;49593&lt;/span&gt;&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;&lt;span style=&quot;color:red&quot;&gt;96&lt;/span&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 &lt;br&gt;
 Explanation &lt;br&gt;
 Hacker 4071 submitted solutions for challenges 19797 and 49593, so the total score = 95 + max(43,96) = 101

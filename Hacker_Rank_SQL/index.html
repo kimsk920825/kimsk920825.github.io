@@ -524,7 +524,7 @@
         }
       }
     })
-  </script><link rel="manifest" href="/manifest.webmanifest" crossorigin="use-credentials"/><link rel="sitemap" type="application/xml" href="/sitemap.xml"/><link rel="alternate" type="application/rss+xml" title="0x530x650x610x6E | Feed" href="/rss.xml"/><link as="script" rel="preload" href="/webpack-runtime-516d11f8ef14a1f27d2b.js"/><link as="script" rel="preload" href="/framework-9e014ff2f7612ce5f1fc.js"/><link as="script" rel="preload" href="/app-79d182b04c6ef210a6e5.js"/><link as="script" rel="preload" href="/styles-2d82ac8e3afc0c213061.js"/><link as="script" rel="preload" href="/cb1608f2-c2f6f93348673c917ef4.js"/><link as="script" rel="preload" href="/commons-d1f26d7a49c1abf78fcc.js"/><link as="script" rel="preload" href="/component---src-templates-post-tsx-504dfee1687a5d3be440.js"/><link as="fetch" rel="preload" href="/page-data/Hacker_Rank_SQL/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/2027115977.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/694178885.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body><script>(function() { try {
+  </script><link rel="manifest" href="/manifest.webmanifest" crossorigin="use-credentials"/><link rel="sitemap" type="application/xml" href="/sitemap.xml"/><link rel="alternate" type="application/rss+xml" title="0x530x650x610x6E | Feed" href="/rss.xml"/><link as="script" rel="preload" href="/webpack-runtime-e719ab288e1790a2a100.js"/><link as="script" rel="preload" href="/framework-9e014ff2f7612ce5f1fc.js"/><link as="script" rel="preload" href="/app-79d182b04c6ef210a6e5.js"/><link as="script" rel="preload" href="/styles-2d82ac8e3afc0c213061.js"/><link as="script" rel="preload" href="/cb1608f2-c2f6f93348673c917ef4.js"/><link as="script" rel="preload" href="/commons-d5b776430429f2bab4ea.js"/><link as="script" rel="preload" href="/component---src-templates-post-tsx-504dfee1687a5d3be440.js"/><link as="fetch" rel="preload" href="/page-data/Hacker_Rank_SQL/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/2027115977.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/694178885.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body><script>(function() { try {
   var mode = localStorage.getItem('theme-ui-color-mode');
   if (!mode) return
   document.body.classList.add('theme-ui-' + mode);
@@ -611,44 +611,197 @@ the score of the submission.</p>
 </tbody>
 </table>
 <h3 id="sample-input" style="position:relative;"><a href="#sample-input" aria-label="sample input permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Sample Input</h3>
-<p>Hackers Table:
-|hacker_id|name|
-|:---:|:---:|
-| 4071  | name  |
-| 4806  | Angela  |
-| 26071  | Frank  |
-| 49438  | Patrick  |
-| 74842  | Lisa  |
-| 80305  | Kimberly  |
-| 84072  | Bonnie  |
-| 87868  | Michael  |
-| 92118  | Todd  |
-| 95895  | Joe  |</p>
+<p>Hackers Table:</p>
+<table>
+<thead>
+<tr>
+<th align="center">hacker_id</th>
+<th align="center">name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">4071</td>
+<td align="center">name</td>
+</tr>
+<tr>
+<td align="center">4806</td>
+<td align="center">Angela</td>
+</tr>
+<tr>
+<td align="center">26071</td>
+<td align="center">Frank</td>
+</tr>
+<tr>
+<td align="center">49438</td>
+<td align="center">Patrick</td>
+</tr>
+<tr>
+<td align="center">74842</td>
+<td align="center">Lisa</td>
+</tr>
+<tr>
+<td align="center">80305</td>
+<td align="center">Kimberly</td>
+</tr>
+<tr>
+<td align="center">84072</td>
+<td align="center">Bonnie</td>
+</tr>
+<tr>
+<td align="center">87868</td>
+<td align="center">Michael</td>
+</tr>
+<tr>
+<td align="center">92118</td>
+<td align="center">Todd</td>
+</tr>
+<tr>
+<td align="center">95895</td>
+<td align="center">Joe</td>
+</tr>
+</tbody>
+</table>
 <br>
-<p>Submissions Table: <br>
-|submission<em>id|hacker</em>id|challenge_id|score|
-|:---:|:---:|:---:|:---:|
-|67194|<span style="color:blue">74842</span>|<span style="color:blue">63132</span>|<span style="color:blue">76</span>|
-|64479   |<span style="color:blue">74842</span>   |<span style="color:blue">19797</span>   |<span style="color:blue">98</span>   |
-|40742   |26071   |49593   |20   |
-|17513   |4806   |49593   |32   |
-|69846   |80305   |19797   |19   |
-|41002   |26071   |89343   |36   |
-|52826   |49438   |49593   |9   |
-|31093   |26071   |19797   |2   |
-|81614   |84072   |49593   |100   |
-|44829   |26071   |89343   |17   |
-|75147   |80305   |49593   |48   |
-|14115   |4806   |49593   |76   |
-|6943   |<span style="color:red">4071</span>   |<span style="color:red">19797</span>   |<span style="color:red">95</span>   |
-|12855   |4806   |25917   |13   |
-|73343   |80305   |49593   |42   |
-|84264   |84072   |63132   |0   |
-|9951   |<span style="color:red">4071</span>   |<span style="color:red">49593</span>   |<span style="color:red">43</span>   |
-|45104   |49438   |25917   |34   |
-|53795   |<span style="color:blue">74842</span>   |<span style="color:blue">19797</span>   |<span style="color:blue">5</span>   |
-|26363   |26071   |19797   |5   |
-|10063   |<span style="color:red">4071</span>   |<span style="color:red">49593</span>   |<span style="color:red">96</span>   |</p>
+<p>Submissions Table: <br></p>
+<table>
+<thead>
+<tr>
+<th align="center">submission_id</th>
+<th align="center">hacker_id</th>
+<th align="center">challenge_id</th>
+<th align="center">score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">67194</td>
+<td align="center"><span style="color:blue">74842</span></td>
+<td align="center"><span style="color:blue">63132</span></td>
+<td align="center"><span style="color:blue">76</span></td>
+</tr>
+<tr>
+<td align="center">64479</td>
+<td align="center"><span style="color:blue">74842</span></td>
+<td align="center"><span style="color:blue">19797</span></td>
+<td align="center"><span style="color:blue">98</span></td>
+</tr>
+<tr>
+<td align="center">40742</td>
+<td align="center">26071</td>
+<td align="center">49593</td>
+<td align="center">20</td>
+</tr>
+<tr>
+<td align="center">17513</td>
+<td align="center">4806</td>
+<td align="center">49593</td>
+<td align="center">32</td>
+</tr>
+<tr>
+<td align="center">69846</td>
+<td align="center">80305</td>
+<td align="center">19797</td>
+<td align="center">19</td>
+</tr>
+<tr>
+<td align="center">41002</td>
+<td align="center">26071</td>
+<td align="center">89343</td>
+<td align="center">36</td>
+</tr>
+<tr>
+<td align="center">52826</td>
+<td align="center">49438</td>
+<td align="center">49593</td>
+<td align="center">9</td>
+</tr>
+<tr>
+<td align="center">31093</td>
+<td align="center">26071</td>
+<td align="center">19797</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">81614</td>
+<td align="center">84072</td>
+<td align="center">49593</td>
+<td align="center">100</td>
+</tr>
+<tr>
+<td align="center">44829</td>
+<td align="center">26071</td>
+<td align="center">89343</td>
+<td align="center">17</td>
+</tr>
+<tr>
+<td align="center">75147</td>
+<td align="center">80305</td>
+<td align="center">49593</td>
+<td align="center">48</td>
+</tr>
+<tr>
+<td align="center">14115</td>
+<td align="center">4806</td>
+<td align="center">49593</td>
+<td align="center">76</td>
+</tr>
+<tr>
+<td align="center">6943</td>
+<td align="center"><span style="color:red">4071</span></td>
+<td align="center"><span style="color:red">19797</span></td>
+<td align="center"><span style="color:red">95</span></td>
+</tr>
+<tr>
+<td align="center">12855</td>
+<td align="center">4806</td>
+<td align="center">25917</td>
+<td align="center">13</td>
+</tr>
+<tr>
+<td align="center">73343</td>
+<td align="center">80305</td>
+<td align="center">49593</td>
+<td align="center">42</td>
+</tr>
+<tr>
+<td align="center">84264</td>
+<td align="center">84072</td>
+<td align="center">63132</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">9951</td>
+<td align="center"><span style="color:red">4071</span></td>
+<td align="center"><span style="color:red">49593</span></td>
+<td align="center"><span style="color:red">43</span></td>
+</tr>
+<tr>
+<td align="center">45104</td>
+<td align="center">49438</td>
+<td align="center">25917</td>
+<td align="center">34</td>
+</tr>
+<tr>
+<td align="center">53795</td>
+<td align="center"><span style="color:blue">74842</span></td>
+<td align="center"><span style="color:blue">19797</span></td>
+<td align="center"><span style="color:blue">5</span></td>
+</tr>
+<tr>
+<td align="center">26363</td>
+<td align="center">26071</td>
+<td align="center">19797</td>
+<td align="center">5</td>
+</tr>
+<tr>
+<td align="center">10063</td>
+<td align="center"><span style="color:red">4071</span></td>
+<td align="center"><span style="color:red">49593</span></td>
+<td align="center"><span style="color:red">96</span></td>
+</tr>
+</tbody>
+</table>
 <br>
 Explanation <br>
 Hacker 4071 submitted solutions for challenges 19797 and 49593, so the total score = 95 + max(43,96) = 101
@@ -958,4 +1111,4 @@ Request_at <span class="token keyword">as</span> <span class="token keyword">Day
       
       
       
-      }</script><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/Hacker_Rank_SQL/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-46800a246443c64ac6e0.js"],"app":["/app-79d182b04c6ef210a6e5.js"],"component---src-pages-404-tsx":["/component---src-pages-404-tsx-c5d5eec18be4a8d2d8e7.js"],"component---src-pages-index-tsx":["/component---src-pages-index-tsx-b249d38c1771ba81e620.js"],"component---src-pages-search-tsx":["/component---src-pages-search-tsx-1b969970f4c875162d26.js"],"component---src-pages-tags-tsx":["/component---src-pages-tags-tsx-16893ebef33d4445f83e.js"],"component---src-templates-post-tsx":["/component---src-templates-post-tsx-504dfee1687a5d3be440.js"]};/*]]>*/</script><script src="/polyfill-46800a246443c64ac6e0.js" nomodule=""></script><script src="/component---src-templates-post-tsx-504dfee1687a5d3be440.js" async=""></script><script src="/commons-d1f26d7a49c1abf78fcc.js" async=""></script><script src="/cb1608f2-c2f6f93348673c917ef4.js" async=""></script><script src="/styles-2d82ac8e3afc0c213061.js" async=""></script><script src="/app-79d182b04c6ef210a6e5.js" async=""></script><script src="/framework-9e014ff2f7612ce5f1fc.js" async=""></script><script src="/webpack-runtime-516d11f8ef14a1f27d2b.js" async=""></script></body></html>
+      }</script><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/Hacker_Rank_SQL/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-46800a246443c64ac6e0.js"],"app":["/app-79d182b04c6ef210a6e5.js"],"component---src-pages-404-tsx":["/component---src-pages-404-tsx-c5d5eec18be4a8d2d8e7.js"],"component---src-pages-index-tsx":["/component---src-pages-index-tsx-b249d38c1771ba81e620.js"],"component---src-pages-search-tsx":["/component---src-pages-search-tsx-1b969970f4c875162d26.js"],"component---src-pages-tags-tsx":["/component---src-pages-tags-tsx-16893ebef33d4445f83e.js"],"component---src-templates-post-tsx":["/component---src-templates-post-tsx-504dfee1687a5d3be440.js"]};/*]]>*/</script><script src="/polyfill-46800a246443c64ac6e0.js" nomodule=""></script><script src="/component---src-templates-post-tsx-504dfee1687a5d3be440.js" async=""></script><script src="/commons-d5b776430429f2bab4ea.js" async=""></script><script src="/cb1608f2-c2f6f93348673c917ef4.js" async=""></script><script src="/styles-2d82ac8e3afc0c213061.js" async=""></script><script src="/app-79d182b04c6ef210a6e5.js" async=""></script><script src="/framework-9e014ff2f7612ce5f1fc.js" async=""></script><script src="/webpack-runtime-e719ab288e1790a2a100.js" async=""></script></body></html>
