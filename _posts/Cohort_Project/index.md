@@ -11,12 +11,14 @@ tags:
   - Ggoogle SQL Query
 ---
 
-|프로젝트|Cohort, Retention, RFM 을 통해 Retail 데이터 분석|
-|:---|:---|
-|분석 목표|퍼널 분석을 통해 잘 유입된 고객이 있다고 가정을 하고, Cohort 분석을 통해 우리가 데려온 고객을 얼마나 잘 지키고 있는지 측정을 하고 RFM을 통해 이 고객들을 우리가 잘 지키기 위해 고객별 적절한 메시지를 보내줘야 하는데 그 고객들을 어떻게 그룹핑을 할지 분석하는 것이 목표.|
-|분석 환경|Google SQL(추출, 전처리), Excel (시각화, 정리)|
-|담당 업무|EDA(Exploratory Data Analysis) 탐색적 데이터 분석,프로젝트 기획 퍼널 분석 후 시각화,Retention 계산,RFM 계산 후 시각화|
-|데이터 출처|Online retail Data Set from UCI ML repo from Kaggle.<br>https://www.kaggle.com/jihyeseo/online-retail-data-set-from-uci-ml-repo|
+
+
+- 프로젝트: Cohort, Retention, RFM 을 통해 Retail 데이터 분석<br>
+- 분석 목표:퍼널 분석을 통해 유입된 고객이 있다고 가정을 하고,Cohort 분석을 통해 우리가 데려온 고객들을 얼마나 잘 자키고 있는지 retention을 측정을 하고, 고객별로 적절한 마케팅 메세지를 보내주기 위해 RFM을 통해서 고객들을 세그먼트한다.<br>
+- 분석 환경: Google SQL(추출), EXCEL(시각화)<br>
+- 담당 업무: <br>1. EDA 탐색점 데이터 분석<br>2.프로젝트 기획<br>3.퍼널 분석 후 시각화<br>4.Retention 계산<br> 5.RFM 계산 후 시각화<br>
+- 데이터 출처: https://www.kaggle.com/jihyeseo/online-retail-data-set-from-uci-ml-repo
+
 
 <br>
 
@@ -29,8 +31,7 @@ FROM `axial-coyote-310511.cohort.cohort_project`
 ORDER BY invoice_date
 LIMIT 300
 ```
-![png](./1.png) ![png](./2.png) 
-
+<p align="center"><img src="./2.png"  height="200px" width="100px"></p> 
 우선 코호트 기간을 한 달로 잡았다. 이유는 Retail 산업을 고려하면 코호트 기간을 daily로 잡는 것이 맞겠지만, 데이터를 살펴보니 daily 로그가 많이 빠져있었기 때문이다.
 
 ### Step2. 코호트 index 구하기.
@@ -72,7 +73,7 @@ ON c.customer_id = f.customer_id
 ```
 <br>
 
-![png](./3.png) 
+<p align="center"><img src="./3.png"  height="130px" width="130px"></p> 
 4월 7일을 4월 1일로 3월 23일은 3월1로 바뀐것을 볼 수 있다. 
 
 2. 코호트 그룹별로, 코호트 인덱스별로 해당하는 고객수가 얼마나 되는지 확인하기. 
@@ -120,7 +121,7 @@ FROM `axial-coyote-310511.cohort.cohort_project`
 group by customer_id)
 
 ```
-![png](./5.png)
+<p align="left"><img src="./5.png"  height="200px" width="550px"></p> 
 결과: 데이터상 30일이 지나도 여전히 살아있는 고객은 60%정도이다.
 
 # RFM

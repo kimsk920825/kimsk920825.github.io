@@ -1,8 +1,9 @@
 ---
-title: 난이도 중 SQL 해커랭크 문제풀이 (총9문제)
+title: 난이도 중/상 SQL 해커랭크, 리트코드 문제풀이 (총10문제) 
 date: 2021-04-07
 tags:
   - SQL해커랭크_Contest_Leaderboard
+  - SQL해커랭크_Interviews 
   - SQL해커랭크_New Companies
   - SQL해커랭크_Occupation
   - SQL해커랭크_Binary Tree Nodes
@@ -11,7 +12,57 @@ tags:
   - SQL해커랭크_Weather Observation 20
   - SQL_LeetCode_262. Trips and Users
   - SQL_LeetCode_626. Exchange Seats
+  - Window_Function
+  - Subquery
+  - With
 ---
+# Interviews 
+<img src="./hacker_rank_interviews.png">
+
+```sql
+SELECT
+contest_id, hacker_id, name,
+total_submissions,total_accepted_submissions,total_views,total_unique_views
+FROM
+(SELECT 
+contest_id, 
+hacker_id, 
+name,
+SUM(total_submissions) total_submissions,
+SUM(total_accepted_submissions) total_accepted_submissions
+FROM
+Contests
+left join
+Colleges USING(contest_id)
+left join
+Challenges USING(college_id)
+left join
+Submission_Stats USING(challenge_id)
+GROUP BY contest_id, hacker_id, name) A
+
+inner join
+
+(
+SELECT 
+contest_id, hacker_id, name,
+SUM(total_views ) total_views,
+SUM(total_unique_views ) total_unique_views
+FROM
+Contests
+left join
+Colleges USING(contest_id)
+left join
+Challenges USING(college_id)
+left join
+View_Stats USING(challenge_id)
+GROUP BY contest_id, hacker_id, name) B
+
+USING(contest_id, hacker_id, name)
+
+WHERE total_submissions IS NOT NULL AND total_accepted_submissions IS NOT NULL AND total_views IS NOT NULL AND total_unique_views IS NOT NULL
+
+```
+
 
 # Contest Leaderboard
 
