@@ -61,6 +61,7 @@ const Layout = (props: LayoutPropsType) => {
         <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
         <meta name="google-site-verification" content={config.googleSearchConsole ?? ''} />
         <style>{FaDom.css()}</style>
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
       </Helmet>
 
       <div id="layout" className={isDark ? 'dark' : 'light'}>
