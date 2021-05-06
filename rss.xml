@@ -1,4 +1,1218 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[0x530x650x610x6E | Feed]]></title><description><![CDATA[데이터 분석가의 직무: Query를 통해 데이터를 추출하고, 다른 부서에서 의사결정을 쉽게 할 수 있게 데이터를 시각화 하며 사업분야의 높은 이해도와 함께 데이터로부터 인사이트를 추출해라]]></description><link>https://kimsk920825.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 29 Apr 2021 13:31:50 GMT</lastBuildDate><item><title><![CDATA[KRX_EDA 원티드 에듀 입사 지원 과제 복습]]></title><description><![CDATA["원티드 에듀" 서류 지원했을 때 주어진 과제가 주가 데이터 분석이었다. 
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[0x530x650x610x6E | Feed]]></title><description><![CDATA[데이터 분석가의 직무: Query를 통해 데이터를 추출하고, 다른 부서에서 의사결정을 쉽게 할 수 있게 데이터를 시각화 하며 사업분야의 높은 이해도와 함께 데이터로부터 인사이트를 추출해라]]></description><link>https://kimsk920825.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 06 May 2021 06:06:41 GMT</lastBuildDate><item><title><![CDATA[Pandas_Guide_My_Note]]></title><description><![CDATA[시리즈 인덱스는 데이터값과 일대일 매칭  데이터가 나열된 1차원 형식의 배열 형태 시리즈 생성 딕셔너리 데이터 생성 Sr = pd.Series(data=딕셔너리데이터이름, index=[]) 인덱스 구조 인덱스값 배열 시리즈 객체.index 데이터값 …]]></description><link>https://kimsk920825.github.io/pandas_guide_note/</link><guid isPermaLink="false">https://kimsk920825.github.io/pandas_guide_note/</guid><pubDate>Thu, 06 May 2021 00:00:00 GMT</pubDate><content:encoded>&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; numpy &lt;span class=&quot;token keyword&quot;&gt;as&lt;/span&gt; np
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; pandas &lt;span class=&quot;token keyword&quot;&gt;as&lt;/span&gt; pd&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h1 id=&quot;시리즈&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%8B%9C%EB%A6%AC%EC%A6%88&quot; aria-label=&quot;시리즈 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;시리즈&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;인덱스는 데이터값과 일대일 매칭 &lt;/li&gt;
+&lt;li&gt;데이터가 나열된 1차원 형식의 배열 형태&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;시리즈-생성&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%8B%9C%EB%A6%AC%EC%A6%88-%EC%83%9D%EC%84%B1&quot; aria-label=&quot;시리즈 생성 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;시리즈 생성&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;딕셔너리 데이터 생성&lt;/li&gt;
+&lt;li&gt;Sr = pd.Series(data=딕셔너리데이터이름, index=[])&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;series_data &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;팀원1&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;김승규&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;팀원2&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;박성준&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;팀원3&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;김아람&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+sr &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; pd&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Series&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;data&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;series_data&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+sr&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;팀원1    김승규
+팀원2    박성준
+팀원3    김아람
+dtype: object&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&quot;인덱스-구조&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%9D%B8%EB%8D%B1%EC%8A%A4-%EA%B5%AC%EC%A1%B0&quot; aria-label=&quot;인덱스 구조 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;인덱스 구조&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;인덱스값 배열&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;시리즈 객체.index&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;데이터값 배열&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;시리즈 객체.values&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;sr&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;index&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;Index([&amp;#39;팀원1&amp;#39;, &amp;#39;팀원2&amp;#39;, &amp;#39;팀원3&amp;#39;], dtype=&amp;#39;object&amp;#39;)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;sr&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;values&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;array([&amp;#39;김승규&amp;#39;, &amp;#39;박성준&amp;#39;, &amp;#39;김아람&amp;#39;], dtype=object)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&quot;원소-선택&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%9B%90%EC%86%8C-%EC%84%A0%ED%83%9D&quot; aria-label=&quot;원소 선택 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;원소 선택&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;정수형 위치 인덱스: iloc.대괄호([])안에 위치를 나타내는 숫자 입력. &lt;/li&gt;
+&lt;li&gt;문자역 위치 인덱스: loc.대괄호([])안에 인덱스 이름 입력.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;sr&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;iloc&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;&amp;#39;김아람&amp;#39;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;sr&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;loc&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;팀원2&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;&amp;#39;박성준&amp;#39;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h1 id=&quot;데이터-프레임&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%8D%B0%EC%9D%B4%ED%84%B0-%ED%94%84%EB%A0%88%EC%9E%84&quot; aria-label=&quot;데이터 프레임 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;데이터 프레임&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;데이터 프레임은 데이터 배열 형태.&lt;/li&gt;
+&lt;li&gt;여러개의 열 벡터들이 같은 행 인덱스 기준으로 줄지어 결합된 2차원 벡터 또는 행렬.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;데이터-프레임-만들기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%8D%B0%EC%9D%B4%ED%84%B0-%ED%94%84%EB%A0%88%EC%9E%84-%EB%A7%8C%EB%93%A4%EA%B8%B0&quot; aria-label=&quot;데이터 프레임 만들기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;데이터 프레임 만들기&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;pandas.DataFrame(딕셔너리형태 객체 이름)&lt;/li&gt;
+&lt;li&gt;df = pandas.DataFrame(딕셔너리형태 객체 이름)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;회사ID리스트 &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;회사ID1&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;1232134&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;회사ID2&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;5839204&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;회사ID3&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;13224213&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+df &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; pd&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;DataFrame&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;회사ID리스트&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; index &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;1&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;2&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;3&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+display&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;df&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/style&gt;
+&lt;table border=&quot;1&quot; class=&quot;dataframe&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&quot;text-align: right;&quot;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;회사ID1&lt;/th&gt;
+      &lt;th&gt;회사ID2&lt;/th&gt;
+      &lt;th&gt;회사ID3&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;1232134&lt;/td&gt;
+      &lt;td&gt;5839204&lt;/td&gt;
+      &lt;td&gt;13224213&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;1232134&lt;/td&gt;
+      &lt;td&gt;5839204&lt;/td&gt;
+      &lt;td&gt;13224213&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;1232134&lt;/td&gt;
+      &lt;td&gt;5839204&lt;/td&gt;
+      &lt;td&gt;13224213&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;h2 id=&quot;행-이름과-인덱스-이름-설정&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%96%89-%EC%9D%B4%EB%A6%84%EA%B3%BC-%EC%9D%B8%EB%8D%B1%EC%8A%A4-%EC%9D%B4%EB%A6%84-%EC%84%A4%EC%A0%95&quot; aria-label=&quot;행 이름과 인덱스 이름 설정 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;행 이름과 인덱스 이름 설정&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;pd.DataFrame(데이터이름, index = [], columns =[])&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;행-이름과-인덱스-이름-바꾸기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%96%89-%EC%9D%B4%EB%A6%84%EA%B3%BC-%EC%9D%B8%EB%8D%B1%EC%8A%A4-%EC%9D%B4%EB%A6%84-%EB%B0%94%EA%BE%B8%EA%B8%B0&quot; aria-label=&quot;행 이름과 인덱스 이름 바꾸기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;행 이름과 인덱스 이름 바꾸기&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;df.index = [새로운 행 이름 배열]&lt;/li&gt;
+&lt;li&gt;df.columns = [새로운 열 이름 배열]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;특정-행-이름과-인덱스-이름-바꾸기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%8A%B9%EC%A0%95-%ED%96%89-%EC%9D%B4%EB%A6%84%EA%B3%BC-%EC%9D%B8%EB%8D%B1%EC%8A%A4-%EC%9D%B4%EB%A6%84-%EB%B0%94%EA%BE%B8%EA%B8%B0&quot; aria-label=&quot;특정 행 이름과 인덱스 이름 바꾸기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;특정 행 이름과 인덱스 이름 바꾸기&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;df.rename(index={&quot;예전이름&quot;:&quot;바꿀이름&quot;,&quot;예전이름&quot;:&quot;바꿀이름&quot;})&lt;/li&gt;
+&lt;li&gt;df.rename(columns={&quot;예전이름&quot;:&quot;바꿀이름&quot;,&quot;예전이름&quot;:&quot;바꿀이름&quot;})&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;df&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;rename&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;index&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;1&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;1_회사&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;#실제 df에는 영향을 주지 않음.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/style&gt;
+&lt;table border=&quot;1&quot; class=&quot;dataframe&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&quot;text-align: right;&quot;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;회사ID1&lt;/th&gt;
+      &lt;th&gt;회사ID2&lt;/th&gt;
+      &lt;th&gt;회사ID3&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1_회사&lt;/th&gt;
+      &lt;td&gt;1232134&lt;/td&gt;
+      &lt;td&gt;5839204&lt;/td&gt;
+      &lt;td&gt;13224213&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;1232134&lt;/td&gt;
+      &lt;td&gt;5839204&lt;/td&gt;
+      &lt;td&gt;13224213&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;1232134&lt;/td&gt;
+      &lt;td&gt;5839204&lt;/td&gt;
+      &lt;td&gt;13224213&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;df&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;rename&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;columns&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;회사ID1&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;회사ID_1&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;#실제 df에는 영향을 주지 않음.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/style&gt;
+&lt;table border=&quot;1&quot; class=&quot;dataframe&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&quot;text-align: right;&quot;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;회사ID_1&lt;/th&gt;
+      &lt;th&gt;회사ID2&lt;/th&gt;
+      &lt;th&gt;회사ID3&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;1232134&lt;/td&gt;
+      &lt;td&gt;5839204&lt;/td&gt;
+      &lt;td&gt;13224213&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;1232134&lt;/td&gt;
+      &lt;td&gt;5839204&lt;/td&gt;
+      &lt;td&gt;13224213&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;1232134&lt;/td&gt;
+      &lt;td&gt;5839204&lt;/td&gt;
+      &lt;td&gt;13224213&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;h2 id=&quot;행열-삭제&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%96%89%EC%97%B4-%EC%82%AD%EC%A0%9C&quot; aria-label=&quot;행열 삭제 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;행,열 삭제&lt;/h2&gt;
+&lt;p&gt;행, 열을 소거시 drop()메서드를 사용하고 행은 axis=0 열은 axis=1로 설정한다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;df.drop(행 인덱스 또는 리스트, axis = 0)&lt;/li&gt;
+&lt;li&gt;df.drop(열 인덱스 또는 리스트, axis = 1)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;df&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;drop&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;1&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; axis&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;#실제 df에는 영향을 주지 않음.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/style&gt;
+&lt;table border=&quot;1&quot; class=&quot;dataframe&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&quot;text-align: right;&quot;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;회사ID1&lt;/th&gt;
+      &lt;th&gt;회사ID2&lt;/th&gt;
+      &lt;th&gt;회사ID3&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;1232134&lt;/td&gt;
+      &lt;td&gt;5839204&lt;/td&gt;
+      &lt;td&gt;13224213&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;1232134&lt;/td&gt;
+      &lt;td&gt;5839204&lt;/td&gt;
+      &lt;td&gt;13224213&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;df&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;drop&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;1&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;2&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; axis&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;#실제 df에는 영향을 주지 않음.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/style&gt;
+&lt;table border=&quot;1&quot; class=&quot;dataframe&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&quot;text-align: right;&quot;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;회사ID1&lt;/th&gt;
+      &lt;th&gt;회사ID2&lt;/th&gt;
+      &lt;th&gt;회사ID3&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;1232134&lt;/td&gt;
+      &lt;td&gt;5839204&lt;/td&gt;
+      &lt;td&gt;13224213&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;df&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;drop&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;회사ID1&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; axis&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/style&gt;
+&lt;table border=&quot;1&quot; class=&quot;dataframe&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&quot;text-align: right;&quot;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;회사ID2&lt;/th&gt;
+      &lt;th&gt;회사ID3&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;5839204&lt;/td&gt;
+      &lt;td&gt;13224213&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;5839204&lt;/td&gt;
+      &lt;td&gt;13224213&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;5839204&lt;/td&gt;
+      &lt;td&gt;13224213&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;h2 id=&quot;행-인덱스-선택&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%96%89-%EC%9D%B8%EB%8D%B1%EC%8A%A4-%EC%84%A0%ED%83%9D&quot; aria-label=&quot;행 인덱스 선택 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;행 인덱스 선택&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;데이터프래임의 행 인덱스를 선택하기 위해서는 loc와 iloc인덱서를 사용한다. &lt;/li&gt;
+&lt;li&gt;문자타입의 인덱스를 선택하기 위해서는 loc&lt;/li&gt;
+&lt;li&gt;정수형타입의 인덱스를 선택하기 위해서는 iloc을 사용한다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;구분&lt;/th&gt;
+&lt;th&gt;loc&lt;/th&gt;
+&lt;th&gt;iloc&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;탐색대상&lt;/td&gt;
+&lt;td&gt;인덱스이름&lt;/td&gt;
+&lt;td&gt;정수형위치&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;범위지정&lt;/td&gt;
+&lt;td&gt;가능(범위끝포함)&lt;/td&gt;
+&lt;td&gt;가능(범위끝제외)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;테스트1&lt;/td&gt;
+&lt;td&gt;loc[&apos;a&apos;:&apos;c&apos;] = &apos;a&apos;,&apos;b&apos;,&apos;c&apos;&lt;/td&gt;
+&lt;td&gt;iloc[1:4] = 1,2,3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;df&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;loc&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;1&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;회사ID1     1232134
+회사ID2     5839204
+회사ID3    13224213
+Name: 1, dtype: object&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;df&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;loc&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;1&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;3&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/style&gt;
+&lt;table border=&quot;1&quot; class=&quot;dataframe&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&quot;text-align: right;&quot;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;회사ID1&lt;/th&gt;
+      &lt;th&gt;회사ID2&lt;/th&gt;
+      &lt;th&gt;회사ID3&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;1232134&lt;/td&gt;
+      &lt;td&gt;5839204&lt;/td&gt;
+      &lt;td&gt;13224213&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;1232134&lt;/td&gt;
+      &lt;td&gt;5839204&lt;/td&gt;
+      &lt;td&gt;13224213&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;1232134&lt;/td&gt;
+      &lt;td&gt;5839204&lt;/td&gt;
+      &lt;td&gt;13224213&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;df&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;loc&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;1&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;3&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/style&gt;
+&lt;table border=&quot;1&quot; class=&quot;dataframe&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&quot;text-align: right;&quot;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;회사ID1&lt;/th&gt;
+      &lt;th&gt;회사ID2&lt;/th&gt;
+      &lt;th&gt;회사ID3&lt;/th&gt;
+      &lt;th&gt;회사ID4&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;1232134&lt;/td&gt;
+      &lt;td&gt;5839204&lt;/td&gt;
+      &lt;td&gt;13224213&lt;/td&gt;
+      &lt;td&gt;235&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;h2 id=&quot;열-선택&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%97%B4-%EC%84%A0%ED%83%9D&quot; aria-label=&quot;열 선택 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;열 선택&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;열 1개만 선택할때: df[&quot;열 이름&quot;] or df.열 이름&lt;/li&gt;
+&lt;li&gt;열을 여러개 선택할때: df[[&quot;&quot;,&quot;&quot;]]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;df&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;회사ID1&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;1    1232134
+2    1232134
+3    1232134
+Name: 회사ID1, dtype: object&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;df&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;회사ID1&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;회사ID2&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/style&gt;
+&lt;table border=&quot;1&quot; class=&quot;dataframe&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&quot;text-align: right;&quot;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;회사ID1&lt;/th&gt;
+      &lt;th&gt;회사ID2&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;1232134&lt;/td&gt;
+      &lt;td&gt;5839204&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;1232134&lt;/td&gt;
+      &lt;td&gt;5839204&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;1232134&lt;/td&gt;
+      &lt;td&gt;5839204&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;h2 id=&quot;원소-선택-1&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%9B%90%EC%86%8C-%EC%84%A0%ED%83%9D-1&quot; aria-label=&quot;원소 선택 1 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;원소 선택&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;행 인덱스와 열 이름을 [행,열]형식의 2차원 좌표로 입력한다. &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;인덱스 이름 방식: 데이터프레임.loc[행 인덱스, 열 번호]&lt;/li&gt;
+&lt;li&gt;정수 위치 인덱스 방식: 데이터프레임.iloc[행 번호, 열 번호]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;df&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;loc&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;2&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;회사ID2&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;&amp;#39;5839204&amp;#39;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;df&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;loc&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;1&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;3&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;회사ID1&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;회사ID4&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/style&gt;
+&lt;table border=&quot;1&quot; class=&quot;dataframe&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&quot;text-align: right;&quot;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;회사ID1&lt;/th&gt;
+      &lt;th&gt;회사ID4&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;1232134&lt;/td&gt;
+      &lt;td&gt;423&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;1232134&lt;/td&gt;
+      &lt;td&gt;235&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;df&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;loc&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;1&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;3&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;회사ID1&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;회사ID4&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/style&gt;
+&lt;table border=&quot;1&quot; class=&quot;dataframe&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&quot;text-align: right;&quot;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;회사ID1&lt;/th&gt;
+      &lt;th&gt;회사ID4&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;1232134&lt;/td&gt;
+      &lt;td&gt;423&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;1232134&lt;/td&gt;
+      &lt;td&gt;23532&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;1232134&lt;/td&gt;
+      &lt;td&gt;235&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;h2 id=&quot;행-추가&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%96%89-%EC%B6%94%EA%B0%80&quot; aria-label=&quot;행 추가 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;행 추가&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;df.loc[인덱스 이름] = 데이터값 또는 리스트&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;df&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;loc&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;4&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;2324124&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;1314213&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;124214123&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;#df에 변화가 바로 적용&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;df&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/style&gt;
+&lt;table border=&quot;1&quot; class=&quot;dataframe&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&quot;text-align: right;&quot;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;회사ID1&lt;/th&gt;
+      &lt;th&gt;회사ID2&lt;/th&gt;
+      &lt;th&gt;회사ID3&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;1232134&lt;/td&gt;
+      &lt;td&gt;5839204&lt;/td&gt;
+      &lt;td&gt;13224213&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;1232134&lt;/td&gt;
+      &lt;td&gt;5839204&lt;/td&gt;
+      &lt;td&gt;13224213&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;1232134&lt;/td&gt;
+      &lt;td&gt;5839204&lt;/td&gt;
+      &lt;td&gt;13224213&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;2324124&lt;/td&gt;
+      &lt;td&gt;1314213&lt;/td&gt;
+      &lt;td&gt;124214123&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;h2 id=&quot;열-추가&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%97%B4-%EC%B6%94%EA%B0%80&quot; aria-label=&quot;열 추가 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;열 추가&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;df[&quot;새로운 열 이름&quot;] = 데이터값 또는 리스트&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;df&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;회사ID4&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;423&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;23532&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;235&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;8679&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;#df에 변화가 바로 적용&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;df&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/style&gt;
+&lt;table border=&quot;1&quot; class=&quot;dataframe&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&quot;text-align: right;&quot;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;회사ID1&lt;/th&gt;
+      &lt;th&gt;회사ID2&lt;/th&gt;
+      &lt;th&gt;회사ID3&lt;/th&gt;
+      &lt;th&gt;회사ID4&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;1232134&lt;/td&gt;
+      &lt;td&gt;5839204&lt;/td&gt;
+      &lt;td&gt;13224213&lt;/td&gt;
+      &lt;td&gt;423&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;1232134&lt;/td&gt;
+      &lt;td&gt;5839204&lt;/td&gt;
+      &lt;td&gt;13224213&lt;/td&gt;
+      &lt;td&gt;23532&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;1232134&lt;/td&gt;
+      &lt;td&gt;5839204&lt;/td&gt;
+      &lt;td&gt;13224213&lt;/td&gt;
+      &lt;td&gt;235&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;2324124&lt;/td&gt;
+      &lt;td&gt;1314213&lt;/td&gt;
+      &lt;td&gt;124214123&lt;/td&gt;
+      &lt;td&gt;8679&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;h2 id=&quot;원소-값-변경&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%9B%90%EC%86%8C-%EA%B0%92-%EB%B3%80%EA%B2%BD&quot; aria-label=&quot;원소 값 변경 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;원소 값 변경&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;df.loc[&quot;행 이름&quot;][&quot;열 이름&quot;] = 새로운 값&lt;/li&gt;
+&lt;li&gt;df.iloc[&quot;행 번호&quot;][&quot;열 번호] = 새로운 값&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;df&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;loc&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;1&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;회사ID1&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;#df에 변화가 바로 적용&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;df&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;loc&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;1&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;회사ID1&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;회사ID4&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;#df에 변화가 바로 적용&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;df&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/style&gt;
+&lt;table border=&quot;1&quot; class=&quot;dataframe&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&quot;text-align: right;&quot;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;회사ID1&lt;/th&gt;
+      &lt;th&gt;회사ID2&lt;/th&gt;
+      &lt;th&gt;회사ID3&lt;/th&gt;
+      &lt;th&gt;회사ID4&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;1232134&lt;/td&gt;
+      &lt;td&gt;5839204&lt;/td&gt;
+      &lt;td&gt;13224213&lt;/td&gt;
+      &lt;td&gt;23532&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;1232134&lt;/td&gt;
+      &lt;td&gt;5839204&lt;/td&gt;
+      &lt;td&gt;13224213&lt;/td&gt;
+      &lt;td&gt;235&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;2324124&lt;/td&gt;
+      &lt;td&gt;1314213&lt;/td&gt;
+      &lt;td&gt;124214123&lt;/td&gt;
+      &lt;td&gt;8679&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;h2 id=&quot;특정-열을-행-인덱스로-설정&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%8A%B9%EC%A0%95-%EC%97%B4%EC%9D%84-%ED%96%89-%EC%9D%B8%EB%8D%B1%EC%8A%A4%EB%A1%9C-%EC%84%A4%EC%A0%95&quot; aria-label=&quot;특정 열을 행 인덱스로 설정 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;특정 열을 행 인덱스로 설정&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;df.set_index([&quot;열 이름들&quot;])&lt;/li&gt;
+&lt;li&gt;df.set_index(&quot;열 이름&quot;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;행-인덱스-재배열&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%96%89-%EC%9D%B8%EB%8D%B1%EC%8A%A4-%EC%9E%AC%EB%B0%B0%EC%97%B4&quot; aria-label=&quot;행 인덱스 재배열 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;행 인덱스 재배열&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;기존 객체를 변경하지 않고 새로운 데이터프래임 객체를 반환한다&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;new_obj &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;comp_row1&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;comp_row2&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;comp_row3&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;comp_row4&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;#df에 변화가 바로 적용&lt;/span&gt;
+df_new &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; df&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;reindex&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;new_obj&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;df_new&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/style&gt;
+&lt;table border=&quot;1&quot; class=&quot;dataframe&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&quot;text-align: right;&quot;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;회사ID1&lt;/th&gt;
+      &lt;th&gt;회사ID2&lt;/th&gt;
+      &lt;th&gt;회사ID3&lt;/th&gt;
+      &lt;th&gt;회사ID4&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;comp_row1&lt;/th&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;comp_row2&lt;/th&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;comp_row3&lt;/th&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;comp_row4&lt;/th&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;h3 id=&quot;재배열된-df_new-변수에-값-할당&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%9E%AC%EB%B0%B0%EC%97%B4%EB%90%9C-df_new-%EB%B3%80%EC%88%98%EC%97%90-%EA%B0%92-%ED%95%A0%EB%8B%B9&quot; aria-label=&quot;재배열된 df_new 변수에 값 할당 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;재배열된 df_new 변수에 값 할당&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;df_new&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;loc&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;comp_row1&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;comp_row4&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;회사ID1&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;31&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;34&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;213&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;421&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;df_new&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/style&gt;
+&lt;table border=&quot;1&quot; class=&quot;dataframe&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&quot;text-align: right;&quot;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;회사ID1&lt;/th&gt;
+      &lt;th&gt;회사ID2&lt;/th&gt;
+      &lt;th&gt;회사ID3&lt;/th&gt;
+      &lt;th&gt;회사ID4&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;comp_row1&lt;/th&gt;
+      &lt;td&gt;31&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;comp_row2&lt;/th&gt;
+      &lt;td&gt;34&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;comp_row3&lt;/th&gt;
+      &lt;td&gt;213&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;comp_row4&lt;/th&gt;
+      &lt;td&gt;421&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;df&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/style&gt;
+&lt;table border=&quot;1&quot; class=&quot;dataframe&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&quot;text-align: right;&quot;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;회사ID1&lt;/th&gt;
+      &lt;th&gt;회사ID2&lt;/th&gt;
+      &lt;th&gt;회사ID3&lt;/th&gt;
+      &lt;th&gt;회사ID4&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;1232134&lt;/td&gt;
+      &lt;td&gt;5839204&lt;/td&gt;
+      &lt;td&gt;13224213&lt;/td&gt;
+      &lt;td&gt;23532&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;1232134&lt;/td&gt;
+      &lt;td&gt;5839204&lt;/td&gt;
+      &lt;td&gt;13224213&lt;/td&gt;
+      &lt;td&gt;235&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;2324124&lt;/td&gt;
+      &lt;td&gt;1314213&lt;/td&gt;
+      &lt;td&gt;124214123&lt;/td&gt;
+      &lt;td&gt;8679&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;h2 id=&quot;행-인덱스-초기화&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%96%89-%EC%9D%B8%EB%8D%B1%EC%8A%A4-%EC%B4%88%EA%B8%B0%ED%99%94&quot; aria-label=&quot;행 인덱스 초기화 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;행 인덱스 초기화&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;df.reset_index()&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;행-인덱스를-기준으로-데이터-정렬&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%96%89-%EC%9D%B8%EB%8D%B1%EC%8A%A4%EB%A5%BC-%EA%B8%B0%EC%A4%80%EC%9C%BC%EB%A1%9C-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%95%EB%A0%AC&quot; aria-label=&quot;행 인덱스를 기준으로 데이터 정렬 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;행 인덱스를 기준으로 데이터 정렬&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;df.sort_index(ascending = True 또는 False)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;df&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;sort_index&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;ascending &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;False&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/style&gt;
+&lt;table border=&quot;1&quot; class=&quot;dataframe&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&quot;text-align: right;&quot;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;회사ID1&lt;/th&gt;
+      &lt;th&gt;회사ID2&lt;/th&gt;
+      &lt;th&gt;회사ID3&lt;/th&gt;
+      &lt;th&gt;회사ID4&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;2324124&lt;/td&gt;
+      &lt;td&gt;1314213&lt;/td&gt;
+      &lt;td&gt;124214123&lt;/td&gt;
+      &lt;td&gt;8679&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;1232134&lt;/td&gt;
+      &lt;td&gt;5839204&lt;/td&gt;
+      &lt;td&gt;13224213&lt;/td&gt;
+      &lt;td&gt;235&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;1232134&lt;/td&gt;
+      &lt;td&gt;5839204&lt;/td&gt;
+      &lt;td&gt;13224213&lt;/td&gt;
+      &lt;td&gt;23532&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;h2 id=&quot;열-인덱스를-기준으로-데이터-정렬&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%97%B4-%EC%9D%B8%EB%8D%B1%EC%8A%A4%EB%A5%BC-%EA%B8%B0%EC%A4%80%EC%9C%BC%EB%A1%9C-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%95%EB%A0%AC&quot; aria-label=&quot;열 인덱스를 기준으로 데이터 정렬 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;열 인덱스를 기준으로 데이터 정렬&lt;/h2&gt;
+&lt;p&gt;df. sort_values(by = &quot;열이름&quot;, ascending True 또는 False)&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;df&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;sort_values&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;by &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;회사ID1&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; ascending&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;False&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/style&gt;
+&lt;table border=&quot;1&quot; class=&quot;dataframe&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&quot;text-align: right;&quot;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;회사ID1&lt;/th&gt;
+      &lt;th&gt;회사ID2&lt;/th&gt;
+      &lt;th&gt;회사ID3&lt;/th&gt;
+      &lt;th&gt;회사ID4&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;2324124&lt;/td&gt;
+      &lt;td&gt;1314213&lt;/td&gt;
+      &lt;td&gt;124214123&lt;/td&gt;
+      &lt;td&gt;8679&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;1232134&lt;/td&gt;
+      &lt;td&gt;5839204&lt;/td&gt;
+      &lt;td&gt;13224213&lt;/td&gt;
+      &lt;td&gt;23532&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;1232134&lt;/td&gt;
+      &lt;td&gt;5839204&lt;/td&gt;
+      &lt;td&gt;13224213&lt;/td&gt;
+      &lt;td&gt;235&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;h1 id=&quot;산술연산&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%82%B0%EC%88%A0%EC%97%B0%EC%82%B0&quot; aria-label=&quot;산술연산 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;산술연산&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;판다스의 산술 연산은 3단계를 거친다. &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;행/열 인덱스를 기준으로 모든 원소를 정렬한다.&lt;/li&gt;
+&lt;li&gt;동일한 위치에 있는 원소끼리 일대일로 대응시킨다. &lt;/li&gt;
+&lt;li&gt;일대일 대응되는 원소끼리 연산을 처리한다. &lt;/li&gt;
+&lt;li&gt;대응되는 원소가 없다면 nan으로 처리한다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;시리즈---숫자&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%8B%9C%EB%A6%AC%EC%A6%88---%EC%88%AB%EC%9E%90&quot; aria-label=&quot;시리즈   숫자 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;시리즈 (+-*/) 숫자&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;시리즈 객체에 어떤 숫자를 연산하면 시리즈의 개별 원소에 각각 적용된 객체로 반환된다. &lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;d &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;index1&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;index2&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;index3&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+sr2 &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; pd&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Series&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;d&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+display&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;sr2&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;index1    1
+index2    2
+index3    3
+dtype: int64&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;sr2&lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;#sr2에 바로 적용 안됨. &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;index1    3
+index2    4
+index3    5
+dtype: int64&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&quot;시리즈---시리즈&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%8B%9C%EB%A6%AC%EC%A6%88---%EC%8B%9C%EB%A6%AC%EC%A6%88&quot; aria-label=&quot;시리즈   시리즈 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;시리즈 (+-*/) 시리즈&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;시리즈가 다른 시리즈와 연산할때 같은 인덱스끼리 연산하다. &lt;/li&gt;
+&lt;li&gt;인덱스가 정렬이 안되어있다해도 판다스는 알아서 같은 인덱스를 찾아 연산한다. &lt;/li&gt;
+&lt;li&gt;연산을 하는 두 시리즈의 크기가 다르거나 크기가 같더라도 인덱스가 다르다면 판단스는 유효한 같이 없다고 생각하여 nan을 추출한다. &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;시리즈-크기가-같고-인덱스도-같은-상황&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%8B%9C%EB%A6%AC%EC%A6%88-%ED%81%AC%EA%B8%B0%EA%B0%80-%EA%B0%99%EA%B3%A0-%EC%9D%B8%EB%8D%B1%EC%8A%A4%EB%8F%84-%EA%B0%99%EC%9D%80-%EC%83%81%ED%99%A9&quot; aria-label=&quot;시리즈 크기가 같고 인덱스도 같은 상황 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;시리즈 크기가 같고 인덱스도 같은 상황&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;d &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;index1&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;index2&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;index3&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+sr3 &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; pd&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Series&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;data&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;d&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;sr2&lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt;sr3&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;index1     5
+index2    11
+index3    13
+dtype: int64&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&quot;시리즈-크기는-같은데-인덱스가-다른-상황&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%8B%9C%EB%A6%AC%EC%A6%88-%ED%81%AC%EA%B8%B0%EB%8A%94-%EA%B0%99%EC%9D%80%EB%8D%B0-%EC%9D%B8%EB%8D%B1%EC%8A%A4%EA%B0%80-%EB%8B%A4%EB%A5%B8-%EC%83%81%ED%99%A9&quot; aria-label=&quot;시리즈 크기는 같은데 인덱스가 다른 상황 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;시리즈 크기는 같은데 인덱스가 다른 상황&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;d &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;index4&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;index5&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;index6&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+sr4 &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; pd&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Series&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;data&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;d&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;sr3&lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt;sr4&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;index1   NaN
+index2   NaN
+index3   NaN
+index4   NaN
+index5   NaN
+index6   NaN
+dtype: float64&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&quot;시리즈-크기는-다르고-인덱스는-같은-상황&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%8B%9C%EB%A6%AC%EC%A6%88-%ED%81%AC%EA%B8%B0%EB%8A%94-%EB%8B%A4%EB%A5%B4%EA%B3%A0-%EC%9D%B8%EB%8D%B1%EC%8A%A4%EB%8A%94-%EA%B0%99%EC%9D%80-%EC%83%81%ED%99%A9&quot; aria-label=&quot;시리즈 크기는 다르고 인덱스는 같은 상황 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;시리즈 크기는 다르고 인덱스는 같은 상황&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;d &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;index1&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;index2&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;23490&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;index3&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;33&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;index4&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;123&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+sr5 &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; pd&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Series&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;data &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; d&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;sr2&lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt;sr5&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;index1        5.0
+index2    23492.0
+index3       36.0
+index4        NaN
+dtype: float64&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&quot;연산-메소드&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%97%B0%EC%82%B0-%EB%A9%94%EC%86%8C%EB%93%9C&quot; aria-label=&quot;연산 메소드 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;연산 메소드&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;객체 사이의 공통된 인덱스가 없거나 Nan이 포함된 경우 연산 결과가 Nan이 반환되는데 이를 방지하기 위해서 메소드안에 fill_value 옵션을 써준다.&lt;/li&gt;
+&lt;li&gt;덧셈: 시리즈객체1.add(시리즈객체2, fill_value=0)&lt;/li&gt;
+&lt;li&gt;뺄셈: 시리즈객체1.sub(시리즈객체2, fill_value=0)&lt;/li&gt;
+&lt;li&gt;곱셈: 시리즈객체1.mul(시리즈객체2, fill_value=0)&lt;/li&gt;
+&lt;li&gt;나눈셈: 시리즈객체1.div(시리즈객체2, fill_value=0)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;sr2&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;add&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;sr4&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; fill_value&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;index1    1.0
+index2    2.0
+index3    3.0
+index4    3.0
+index5    1.0
+index6    3.0
+dtype: float64&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;sr3&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;sub&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;sr2&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; fill_value&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;index1    3
+index2    7
+index3    7
+dtype: int64&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;sr3&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;index1     4
+index2     9
+index3    10
+dtype: int64&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h1 id=&quot;데이터-입출력&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%9E%85%EC%B6%9C%EB%A0%A5&quot; aria-label=&quot;데이터 입출력 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;데이터 입출력&lt;/h1&gt;
+&lt;h2 id=&quot;csv&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#csv&quot; aria-label=&quot;csv permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;CSV&lt;/h2&gt;
+&lt;h3 id=&quot;csv파일-불러오기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#csv%ED%8C%8C%EC%9D%BC-%EB%B6%88%EB%9F%AC%EC%98%A4%EA%B8%B0&quot; aria-label=&quot;csv파일 불러오기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;CSV파일 불러오기&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;pd.read_csv(&apos;파일경로/파일이름.csv&apos;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;csv로-저장하기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#csv%EB%A1%9C-%EC%A0%80%EC%9E%A5%ED%95%98%EA%B8%B0&quot; aria-label=&quot;csv로 저장하기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;CSV로 저장하기&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;데이터프레임.to_csv(&apos;파일경로/파일이름.csv&apos;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;excel&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#excel&quot; aria-label=&quot;excel permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Excel&lt;/h2&gt;
+&lt;h3 id=&quot;excel-파일-불러오기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#excel-%ED%8C%8C%EC%9D%BC-%EB%B6%88%EB%9F%AC%EC%98%A4%EA%B8%B0&quot; aria-label=&quot;excel 파일 불러오기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Excel 파일 불러오기&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;pandas.read_excel(&apos;파일경로/파일이름.xlsx&apos;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;excel-파일로-저장하기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#excel-%ED%8C%8C%EC%9D%BC%EB%A1%9C-%EC%A0%80%EC%9E%A5%ED%95%98%EA%B8%B0&quot; aria-label=&quot;excel 파일로 저장하기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Excel 파일로 저장하기&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;데이터프레임.to_excel(&apos;파일경로/파일이름.xlsx&apos;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;여러개의-데이터프레임을-한개의-excel파일로-저장&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%97%AC%EB%9F%AC%EA%B0%9C%EC%9D%98-%EB%8D%B0%EC%9D%B4%ED%84%B0%ED%94%84%EB%A0%88%EC%9E%84%EC%9D%84-%ED%95%9C%EA%B0%9C%EC%9D%98-excel%ED%8C%8C%EC%9D%BC%EB%A1%9C-%EC%A0%80%EC%9E%A5&quot; aria-label=&quot;여러개의 데이터프레임을 한개의 excel파일로 저장 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;여러개의 데이터프레임을 한개의 excel파일로 저장&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;writer = pandas.ExcelWriter(&quot;파일경로/파일이름.xlsx&quot;)&lt;/li&gt;
+&lt;li&gt;df1.to&lt;em&gt;excel(writer, sheet&lt;/em&gt;name=&quot;sheet1&quot;)&lt;/li&gt;
+&lt;li&gt;df2.to&lt;em&gt;excel(writer, sheet&lt;/em&gt;name=&quot;sheet2&quot;)&lt;/li&gt;
+&lt;li&gt;writer.save()&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;json&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#json&quot; aria-label=&quot;json permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Json&lt;/h2&gt;
+&lt;h3 id=&quot;json-파일-불러오기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#json-%ED%8C%8C%EC%9D%BC-%EB%B6%88%EB%9F%AC%EC%98%A4%EA%B8%B0&quot; aria-label=&quot;json 파일 불러오기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Json 파일 불러오기&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;pandas.read_json(&apos;파일경로/파일이름.json&apos;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;json-파일로-저장하기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#json-%ED%8C%8C%EC%9D%BC%EB%A1%9C-%EC%A0%80%EC%9E%A5%ED%95%98%EA%B8%B0&quot; aria-label=&quot;json 파일로 저장하기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Json 파일로 저장하기&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;df.to_json(&apos;파일경로/파일명.json&apos;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;html&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#html&quot; aria-label=&quot;html permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;HTML&lt;/h2&gt;
+&lt;h3 id=&quot;html-파일-불러오기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#html-%ED%8C%8C%EC%9D%BC-%EB%B6%88%EB%9F%AC%EC%98%A4%EA%B8%B0&quot; aria-label=&quot;html 파일 불러오기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;HTML 파일 불러오기&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;웹에 있는 &lt;table&gt; 태그가 붙은 &lt;/li&gt;
+&lt;li&gt;pandas.read_html(&apos;웹주소 url&apos;)&lt;/li&gt;
+&lt;li&gt;pandas.read_html(&apos;파일경로/파일명.html&apos;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;데이터-살펴보기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%B4%ED%8E%B4%EB%B3%B4%EA%B8%B0&quot; aria-label=&quot;데이터 살펴보기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;데이터 살펴보기&lt;/h1&gt;
+&lt;h2 id=&quot;각-열의-개수&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EA%B0%81-%EC%97%B4%EC%9D%98-%EA%B0%9C%EC%88%98&quot; aria-label=&quot;각 열의 개수 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;각 열의 개수&lt;/h2&gt;
+&lt;p&gt;count() 메서드는 데이터프레임의 각 열이 가지고 있는 데이터 개수를 시리즈 객체로 반환한다. &lt;/p&gt;
+&lt;h2 id=&quot;각-열의-고윳값-개수&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EA%B0%81-%EC%97%B4%EC%9D%98-%EA%B3%A0%EC%9C%B3%EA%B0%92-%EA%B0%9C%EC%88%98&quot; aria-label=&quot;각 열의 고윳값 개수 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;각 열의 고윳값 개수&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;value_counts() 메서드는 시리즈 객체의 고윳값 개수를 세는데 사용한다. &lt;/li&gt;
+&lt;li&gt;dropna=True 옵션을 사용하면 nan값을 제외하고 숫자를 센다. &lt;/li&gt;
+&lt;li&gt;dropna=False가 기본값이다.
+데이터프레임[&quot;열이름&quot;].value_counts()&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[KRX_EDA 원티드 에듀 입사 지원 과제 복습]]></title><description><![CDATA["원티드 에듀" 서류 지원했을 때 주어진 과제가 주가 데이터 분석이었다. 
 오늘 서류 면접 결과를 기다리면서 과제 프로젝트를 했을 때 혹시 데이터 탐색시 발견하지 못한 점이 있지 않은지 확인차 시각화하며 데이터를 음미(?)했다.
 데이터를 보며 인사이…]]></description><link>https://kimsk920825.github.io/krx_eda_review_wanted_project/</link><guid isPermaLink="false">https://kimsk920825.github.io/krx_eda_review_wanted_project/</guid><pubDate>Thu, 29 Apr 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&quot;원티드 에듀&quot; 서류 지원했을 때 주어진 과제가 주가 데이터 분석이었다. &lt;br&gt;
 오늘 서류 면접 결과를 기다리면서 과제 프로젝트를 했을 때 혹시 데이터 탐색시 발견하지 못한 점이 있지 않은지 확인차 시각화하며 데이터를 음미(?)했다.&lt;br&gt;
