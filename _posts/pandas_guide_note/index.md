@@ -1,7 +1,8 @@
 ---
-title: Pandas_Guide_My_Note
+title: Pandas_Guide_For_Teammates
 date: 2021-05-06
 tags:
+  - 팀원모두취직
   - 판다스정리
   - 원티드취직
   - 마이리얼트립취직
